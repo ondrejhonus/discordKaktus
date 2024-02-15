@@ -6,7 +6,7 @@ This project aims to notify you on Discord whenever a new event is happening on 
 
 Before running this project, make sure you have the following:
 
-- Node.js installed on your machine
+- Node.js and npm installed on your machine
 - Discord account and a server where you have administrative privileges
 
 ## Installation
