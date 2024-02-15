@@ -5,7 +5,8 @@ const { token } = require('./config.json');
 
 
 const url = 'https://www.mujkaktus.cz/chces-pridat';
-const userID = '511139469320257577';
+// Replace YOUR_USER_ID with your user ID
+const userID = 'YOUR_USER_ID';
 let previousContent = '';
 
 async function checkWebsite() {
