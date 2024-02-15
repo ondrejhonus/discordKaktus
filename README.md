@@ -18,8 +18,14 @@ Before running this project, make sure you have the following:
 ## Configuration
 
 1. Create a new Discord bot on the Discord Developer Portal.
-2. Copy the bot token and paste it in the `config.json` file.
-3. Replace the UserID in the `index.js` file.
+2. Create a `config.json` file and paste
+```
+{
+	"token": "YOUR_TOKEN_HERE"
+}
+```
+3. Copy the bot token and paste it in the `config.json` file.
+4. Replace the UserID in the `index.js` file.
 
 ## Usage
 
