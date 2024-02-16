@@ -1,5 +1,6 @@
 const { Client, GatewayIntentBits, IntentsBitField } = require('discord.js');
 const axios = require('axios');
+const fs = require('fs');
 const client = new Client({ intents: [GatewayIntentBits.Guilds, IntentsBitField.Flags.DirectMessages] });
 const { token } = require('./config.json');
 
@@ -20,6 +21,14 @@ async function checkWebsite() {
         else {
             console.log('No changes :(');
         }
+
+        fs.writeFile('websiteSteal.html', currentContent, (err) => {
+            if (err) {
+                console.error('Cannot make file:', err);
+            } else {
+                console.log('Website stolen, haha!');
+            }
+        });
 
         previousContent = currentContent;
     } catch (error) {

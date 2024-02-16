@@ -1,0 +1,260 @@
+<!DOCTYPE html> 
+<html class="ltr" dir="ltr" lang="cs">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Můj Kaktus</title>
+		<link href="/apple-touch-icon.png" rel="apple-touch-icon" />
+		<link href="/static-shared/kaktus-2019-theme/images/favicon.ico" rel="Shortcut Icon" />
+		<link href="/static-shared/kaktus-2019-theme/css/custom.css" rel="stylesheet" />
+		
+
+		<script>
+		var dataLayer = dataLayer || []; // Google Tag Manager
+		var recipientsData;
+		var gcConfig = {};
+		function loadRecipients() {
+			var xmlhttp = new XMLHttpRequest();
+
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == XMLHttpRequest.DONE) {
+				if (xmlhttp.status == 200) {
+					recipientsData = JSON.parse(xmlhttp.responseText);
+					initRecipients();
+					//console.log(recipientsData);
+				}
+				else if (xmlhttp.status == 400) {
+					// error 400
+				}
+				else {
+				}
+				}
+			};
+
+			xmlhttp.open("GET", "/delegate/recdef", true);
+			xmlhttp.send();
+		}
+
+		function initDialog() {
+			var cTypeName = 'cocos';
+			var cRecipientsName = 'corec';
+			var currentDomain = location.hostname;
+			if(currentDomain.indexOf("twww") > -1) {
+				cTypeName = 'tcocos';
+				cRecipientsName = 'tcorec';
+			}
+			if(currentDomain.indexOf("t2www") > -1) {
+				cTypeName = 't2cocos';
+				cRecipientsName = 't2corec';
+			}
+			gcConfig = {
+				cocosDelegate: '/delegate/rec',
+				cookieTypesName: cTypeName,
+				cookieRecipientsName: cRecipientsName,
+				recipients: recipientsData
+			};
+		}
+		function initRecipients() {
+			gcConfig.recipients = recipientsData;
+
+			gdprComponent();
+		}
+
+		initDialog();
+		</script>	
+		<script src="/static-shared/kaktus-2019-theme/js/gdpr-component-v2.js?v=2" type="text/javascript"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function(event) { 
+				loadRecipients();
+				//initDialog();
+			});
+		</script>
+</head>
+	<body class="yui3-skin-sam controls-visible guest-site signed-out public-page site" data-sprite="/static-shared/kaktus-2019-theme/images/custom/sprite.svg">
+		<script>!function(){var t=new XMLHttpRequest;t.open("GET",document.body.dataset.sprite,!0),t.send(),t.onload=function(e){var n=document.createElement("div");n.style.display="none",n.innerHTML=t.responseText,document.body.insertBefore(n,document.body.childNodes[0])}}();</script>
+
+		<header class="header">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="header-logo col-auto">
+						<a href="/">
+							<svg class="icon" width="74" height="48">
+								<use xlink:href="#svg-logo"></use>
+							</svg>
+						</a>
+					</div>
+					<div class="header-home col-auto">
+						<a class="link-icon link-icon-right text-dark" href="/">
+							mujkaktus.cz
+							<svg class="icon" width="8" height="8">
+								<use xlink:href="#svg-arrow"></use>
+							</svg>
+						</a>
+					</div>
+					<div class="col-auto d-block d-md-none">
+						<button class="btn-empty js-menu-toggle" type="button">
+							<svg class="icon" width="24" height="24">
+								<use xlink:href="#svg-menu"></use>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div id="main-content" class="content-1" role="main">
+			<div class="portlet-layout">
+				<div id="column-1" class="portlet-column portlet-column-only">
+					<nav class="menu" id="menu">
+						<div class="container menu-container js-container">
+							<ul class="menu-primary">
+								<li>
+									<a href="/koupit-kartu">
+										<span>Koupit kartu</span>
+									</a>
+								</li>
+								<li>
+									<a href="/prenest-cislo">
+										<span>Přenést číslo</span>
+									</a>
+								</li>
+								<li>
+									<a href="/aktivovat-kartu">
+										<span>Aktivovat kartu</span>
+									</a>
+								</li>
+								<li>
+									<a href="/dobit-kartou">
+										<span>Dobít kredit</span>
+									</a>
+								</li>
+								<li>
+									<a href="/aplikace">
+										<span>Aplikace</span>
+									</a>
+								</li>
+								<li>
+									<a href="https://www.kaktusherna.cz/">
+										<span>Herna</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</nav>
+					<main class="content">
+						<div class="container">
+							<h1 class="mb-4">Chyba</h1>
+							<div class="box flex-grow-1">
+								<div class="box-content">
+									<h2>Ojoj...</h2>
+									<div class="alert alert-danger" role="alert">
+										<div class="alert-content">
+											<svg class="icon" width="40" height="40">
+												<use xlink:href="#svg-message-warning"></use>
+											</svg>
+											<div class="alert-message">
+												<p>Nejsou povolené Cookies v prohlížeči.</p>
+												<p>Kód chyby: 707</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<a class="link-icon link-icon-left text-dark font-weight-bold" href="javascript:history.back()">
+								<svg class="icon icon-flip-horizontal" width="10" height="16">
+									<use xlink:href="#svg-chevron"></use>
+								</svg>
+								Zpět
+							</a>
+						</div>
+					</main>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4">
+						<a href="#footer-documents" class="d-flex justify-content-between align-items-center collapsed"
+							data-toggle="collapse" data-target="#footer-documents" aria-expanded="true" aria-controls="footer-documents">
+							<h5>Dokumenty ke stažení</h5>
+							<svg class="icon d-lg-none" width="16" height="8">
+								<use xlink:href="#svg-caret"></use>
+							</svg>
+						</a>
+						<ul id="footer-documents" class="collapse">
+							<li><a href="/vseobecne-podminky">Všeobecné podmínky</a></li>
+							<li><a href="/cenik">Ceník</a></li>
+							<li><a href="/prohlaseni-o-ochrane-osobnich-udaju">Prohlášení o ochraně osobních údajů</a></li>
+							<li><a href="https://www.mujkaktus.cz/documents/285543/0/eetnalepka">Etržby</a></li>
+							<li><a href="/co-jsou-cookies">Cookies</a></li>
+							<li><a href="/ochranasoukromi">Ochrana soukromí</a></li>
+						</ul>
+					</div>
+					<div class="col-lg-4">
+						<hr class="line d-block d-lg-none" />
+						<a href="#footer-faq" class="d-flex justify-content-between align-items-center collapsed" data-toggle="collapse"
+							data-target="#footer-faq" aria-expanded="true" aria-controls="collapseOne">
+							<h5>Nejčastější dotazy</h5>
+							<svg class="icon d-lg-none" width="16" height="8">
+								<use xlink:href="#svg-caret"></use>
+							</svg>
+						</a>
+						<ul id="footer-faq" class="collapse">
+							<li><a href="/nejcastejsi-dotazy#muzu-prenest-cislo">Můžu si ke Kaktusu přenést číslo?</a></li>
+							<li><a href="/nejcastejsi-dotazy#dobit-kredit">Kde můžu dobít kredit?</a></li>
+							<li><a href="/nejcastejsi-dotazy#kaktusite">Jak fungují Kaktusítě</a></li>
+							<li><a href="/nejcastejsi-dotazy#aplikace">Kde stáhnu aplikaci?</a></li>
+						</ul>
+					</div>
+					<div class="col-lg-4">
+						<hr class="line d-block d-lg-none" />
+						<h5>Sledujte nás</h5>
+						<ul class="social-medias">
+							<li>
+								<a href="https://www.facebook.com/Kaktus/">
+									<svg class="icon" width="32" height="32">
+										<use xlink:href="#svg-facebook"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.instagram.com/mujkaktus/">
+									<svg class="icon" width="32" height="32">
+										<use xlink:href="#svg-instagram"></use>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.youtube.com/user/mujkaktuscz">
+									<svg class="icon" width="32" height="32">
+										<use xlink:href="#svg-youtube"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="/static-shared/kaktus-2019-theme/js/main.js" async></script>
+		<!-- Google Code for Kaktus-nrt all -->
+		<!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
+		<script type="text/javascript">
+			/* <![CDATA[ */
+				var google_conversion_id = 1039813853;
+				var google_conversion_label = "lP_UCJGpyAcQ3Znp7wM";
+				var google_custom_params = window.google_tag_params;
+				var google_remarketing_only = true;
+			/* ]]> */
+		</script>
+		<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+		<noscript>
+			<div style="display:inline;">
+				<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1039813853/?value=0&amp;label=lP_UCJGpyAcQ3Znp7wM&amp;guid=ON&amp;script=0" />
+			</div>
+		</noscript>
+	</body>
+</html>
